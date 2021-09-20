@@ -3,8 +3,6 @@ import sys
 from matplotlib import pyplot as plt
 import numpy as np
 from scipy import spatial
-import time
-
 
 def prepare_mask(image, x, y):
     # create a mask with the size 100x100 at the given coordinates
@@ -52,7 +50,7 @@ def plot_result(image, hist_indices):
         y, x = get_coordinates(hist_ind)
         masked_img = prepare_mask(image, x, y)
         fig, ax = plt.subplot(plot_ind), plt.imshow(masked_img, 'gray')
-        fig.title.set_text('Coordinates:x={}, y={}'.format(y, x), )
+        fig.title.set_text('Coordinates:x={}, y={}'.format(y, x))
         plot_ind += 1
         if plot_ind == 233:
             plot_ind += 1
